@@ -1,13 +1,14 @@
-let a= +prompt('Nhập a');;
-let tongle = 0;
-if(!isNaN(a) && a > 0) {
+let a = +prompt("Nhập a");
+let sum = 0;
+
+if (!isNaN(a)) {
     for (let i = 1; i <= a; i++) {
-        console.log(i);
-        if (i % 2 !== 0) {
-            tongle += i;
+        if ((a % 4 === 0 && i <= a - 2) || (a % 4 === 3 && i <= a - 1) || (a % 4 !== 0 && a % 4 !== 3)) {
+            sum += i;
+            console.log(i);
         }
     }
+    console.log('Tổng: ' + sum);
 } else {
-    console.log("Vui lòng nhập một số nguyên dương.");
+    console.log("Không hợp lệ");
 }
-console.log('Tổng các số lẻ từ 1 đến ' + a + ' là: ' + tongle);
