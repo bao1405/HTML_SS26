@@ -1,17 +1,14 @@
-let a = +prompt("Nhập số nguyên dương a:");
-let b = +prompt("Nhập số nguyên dương b:");
-if (a > b) {
-    [a, b] = [b, a];
-}
-
-let numle = 0;
-let numchan = 0;
-for (let i = a + 1; i < b; i++) {
-    if (i % 2 !== 0) {
-        numle += i;
-    } else {
-        numchan += i;
+const mangSoNguyen = [2, 5, 3, 8, 1, 7, 4, 6];
+const giaTriNhap = parseInt(prompt("Nhập vào một giá trị:"));
+let viTriTimThay = -1;
+for (let i = 0; i < mangSoNguyen.length; i++) {
+    if (mangSoNguyen[i] === giaTriNhap) {
+        viTriTimThay = i;
+        break;
     }
 }
-console.log(`Tổng số lẻ từ ${a} đến ${b}: ${numle}`);
-console.log(`Tổng số chẵn từ ${a} đến ${b}: ${numchan}`);
+if (viTriTimThay !== -1) {
+    console.log(`Phần tử ${giaTriNhap} được tìm thấy tại vị trí ${viTriTimThay} trong mảng.`);
+} else {
+    console.log("Phần tử không tồn tại trong mảng.");
+}
