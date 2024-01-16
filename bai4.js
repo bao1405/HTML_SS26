@@ -1,12 +1,15 @@
-let n = +prompt('Nhập vào số nguyên dương n:');
-let S = 0;
-let sum = 1;
-if (!isNaN(n) && n > 0) {
-    for (let i = 1; i <= n; i++) {
-        sum *= i;
-        S += sum;
+const a = parseInt(prompt("Nhập vào số nguyên dương a:"));
+const b = parseInt(prompt("Nhập vào số nguyên dương b:"));
+const mangKetQua = [];
+for (let i = 1; i <= a; i++) {
+    if (i % b === 0) {
+        mangKetQua.push(i);
     }
-    console.log('Giá trị của biểu thức S là:', S);
-} else {
-    console.log('Vui lòng nhập một số nguyên dương.');
 }
+for (let i = 1; i <= b; i++) {
+    if (i % a === 0 && !mangKetQua.includes(i)) {
+        mangKetQua.push(i);
+    }
+}
+console.log(`Các số chia hết cho ${b} hoặc ${a} trong khoảng từ 1 đến ${Math.max(a, b)} là:`);
+console.log(mangKetQua);
