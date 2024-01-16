@@ -1,14 +1,9 @@
-let n = +prompt('Nhập n');
-let tong = 0;
-
-if (!isNaN(n) && n > 0) {
-    let m = 1;
-    while (tong + m < n) {
-        console.log(m);
-        tong += m;
-        m++;
+const mangSoNguyen = [2, 5, 3, 2, 8, 2, 3, 1, 7, 5, 2];
+const soNhapVao = parseInt(prompt("Nhập vào một số nguyên:"));
+let soLanXuatHien = 0;
+for (let i = 0; i < mangSoNguyen.length; i++) {
+    if (mangSoNguyen[i] === soNhapVao) {
+        soLanXuatHien++;
     }
-    console.log("Số lớn nhất mà tổng các số < m nhỏ hơn", n, "là:", m - 1);
-} else {
-    console.log("Vui lòng nhập một số nguyên dương.");
 }
+console.log(`Số ${soNhapVao} xuất hiện ${soLanXuatHien} lần trong mảng.`);
