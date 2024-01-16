@@ -1,14 +1,24 @@
-let a = +prompt('Nhập số nguyên a: ');
-let b = +prompt('Nhập số nguyên b: ');
-let c = +prompt('Nhập số nguyên c: ');
-let d = +prompt('Nhập số nguyên d: ');
+const mangNguyen = [1, 5, 6, 3, 2, 1, 1, 5, 6, 7];
+const soNhapVao = parseInt(prompt("Nhập vào một số:"));
+let mangCon = null;
+for (let i = 0; i < mangNguyen.length; i++) {
+    let currentSum = 0;
+    let tempMangCon = [];
+    for (let j = i; j < mangNguyen.length; j++) {
+        currentSum += mangNguyen[j];
+        tempMangCon.push(mangNguyen[j]);
+        if (currentSum === soNhapVao) {
+            mangCon = tempMangCon;
+            break;
+        }
+    }
 
-let i = Math.max(a, b, c, d);
-
-while (true) {
-    if (i % a === 0 && i % b === 0 && i % c === 0 && i % d === 0) {
-        console.log(`Bội chung nhỏ nhất của ${a}, ${b}, ${c}, ${d} là: ${i}`);
+    if (mangCon) {
         break;
     }
-    i++;
+}
+if (mangCon) {
+    console.log(`Mảng con có tổng bằng ${soNhapVao}: [${mangCon.join(', ')}]`);
+} else {
+    console.log("Không có mảng con thỏa mãn");
 }
