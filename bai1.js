@@ -1,13 +1,11 @@
-let a = +prompt("Nhập a");
-let sum = 0;
-
-if (!isNaN(a)) {
-    for (let i = 1; i <= a; i++) {
-        if ((a % 4 === 0 && i <= a - 2) || (a % 4 === 3 && i <= a - 1) || (a % 4 !== 0 && a % 4 !== 3)) {
-            sum += i;
-        }
+const mang = [1, 'abc', 3, 'xyz', 5, 6.7, 'ghi'];
+let tonTaiSoNguyen = false;
+for (let i = 0; i < mang.length; i++) {
+    if (Number.isInteger(mang[i])) {
+        console.log(`Phần tử số nguyên: ${mang[i]}`);
+        tonTaiSoNguyen = true;
     }
-    console.log('Tổng: ' + sum);
-} else {
-    console.log("Không hợp lệ");
+}
+if (!tonTaiSoNguyen) {
+    console.log("Trong mảng không tồn tại số nguyên");
 }
