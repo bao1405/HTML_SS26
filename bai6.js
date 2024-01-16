@@ -1,11 +1,18 @@
-let n =+prompt("Nhập vào số nguyên dương n:");
-if (!isNaN(n) && n > 0) {
-    let fi = [0, 1];
-    while (fi.length <= n) {
-        fi.push(fi[fi.length - 1] + fi[fi.length - 2]);
+const mangSoNguyen = [2, -5, 1, -3, 8, -7, 4, 6, -9];
+let indexAm = 0;
+let indexDuong = mangSoNguyen.length - 1;
+while (indexAm < indexDuong) {
+    while (mangSoNguyen[indexAm] >= 0 && indexAm < indexDuong) {
+        indexAm++;
     }
-
-    console.log(`Số Fibonacci thứ ${n}: ${fi[n]}`);
-} else {
-    console.log("Vui lòng nhập vào một số nguyên dương.");
+    while (mangSoNguyen[indexDuong] < 0 && indexAm < indexDuong) {
+        indexDuong--;
+    }
+    if (indexAm < indexDuong) {
+        let temp = mangSoNguyen[indexAm];
+        mangSoNguyen[indexAm] = mangSoNguyen[indexDuong];
+        mangSoNguyen[indexDuong] = temp;
+    }
 }
+console.log("Mảng sau khi di chuyển các phần tử âm lên đầu và dương về cuối:");
+console.log(mangSoNguyen);
